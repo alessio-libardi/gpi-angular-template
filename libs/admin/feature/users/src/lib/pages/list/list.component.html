@@ -1,0 +1,18 @@
+<div fxLayout="column" fxLayoutGap="1em">
+  <admin-feature-users-list-header (created)="create()"> </admin-feature-users-list-header>
+
+  <ng-container
+    *ngIf="entities$ | async as entities"
+    [ngTemplateOutlet]="entities?.length > 0 ? results : noResults"
+    [ngTemplateOutletContext]="{ $implicit: entities }"
+  >
+  </ng-container>
+</div>
+
+<ng-template #results let-entities>
+  <admin-feature-users-list-results [entities]="entities" (edited)="edit($event)" (deleted)="delete($event)">
+  </admin-feature-users-list-results>
+</ng-template>
+<ng-template #noResults>
+  <admin-feature-users-list-no-results> </admin-feature-users-list-no-results>
+</ng-template>

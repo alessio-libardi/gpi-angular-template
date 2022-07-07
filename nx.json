@@ -1,0 +1,116 @@
+{
+  "npmScope": "gpi",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tslint.json": "*",
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "admin-automation": {
+      "tags": ["app", "scope:admin", "platform:client"],
+      "implicitDependencies": ["admin-util-assets", "shared-util-assets", "shared-util-styles"]
+    },
+    "admin-care": {
+      "tags": ["app", "scope:admin", "platform:client"],
+      "implicitDependencies": ["admin-util-assets", "shared-util-assets", "shared-util-styles"]
+    },
+    "admin-ict": {
+      "tags": ["app", "scope:admin", "platform:client"],
+      "implicitDependencies": ["admin-util-assets", "shared-util-assets", "shared-util-styles"]
+    },
+    "admin-pay": {
+      "tags": ["app", "scope:admin", "platform:client"],
+      "implicitDependencies": ["admin-util-assets", "shared-util-assets", "shared-util-styles"]
+    },
+    "admin-software": {
+      "tags": ["app", "scope:admin", "platform:client"],
+      "implicitDependencies": ["admin-util-assets", "shared-util-assets", "shared-util-styles"]
+    },
+    "admin-template": {
+      "tags": ["app", "scope:admin", "platform:client"],
+      "implicitDependencies": ["admin-util-assets", "shared-util-assets", "shared-util-styles"]
+    },
+    "admin-data-access-auth": {
+      "tags": ["lib", "scope:admin", "type:data-access", "platform:client"]
+    },
+    "admin-data-access-users": {
+      "tags": ["lib", "scope:admin", "type:data-access", "platform:client"]
+    },
+    "admin-entity": {
+      "tags": ["lib", "scope:admin", "type:entity", "platform:shared"]
+    },
+    "admin-feature-private": {
+      "tags": ["lib", "scope:admin", "type:feature", "platform:client"]
+    },
+    "admin-feature-public": {
+      "tags": ["lib", "scope:admin", "type:feature", "platform:client"]
+    },
+    "admin-feature-shell": {
+      "tags": ["lib", "scope:admin", "type:feature", "platform:client"]
+    },
+    "admin-feature-users": {
+      "tags": ["lib", "scope:admin", "type:feature", "platform:client"]
+    },
+    "admin-util-auth": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:client"]
+    },
+    "admin-util-environment": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:client"]
+    },
+    "admin-util-error": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:client"]
+    },
+    "admin-util-icons": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:client"]
+    },
+    "admin-util-languages": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:client"]
+    },
+    "admin-util-notifications": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:client"]
+    },
+    "admin-util-shared": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:client"]
+    },
+    "admin-util-themes": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:client"]
+    },
+    "admin-util-assets": {
+      "tags": ["lib", "scope:admin", "type:util", "platform:shared"]
+    },
+    "shared-ui-material": {
+      "tags": ["lib", "scope:shared", "type:ui", "platform:client"]
+    },
+    "shared-util-assets": {
+      "tags": ["lib", "scope:shared", "type:util", "platform:shared"]
+    },
+    "shared-util-styles": {
+      "tags": ["lib", "scope:shared", "type:util", "platform:shared"]
+    },
+    "admin-feature-home": {
+      "tags": ["lib", "scope:admin", "type:feature", "platform:client"]
+    },
+    "admin-feature-profile": {
+      "tags": ["lib", "scope:admin", "type:feature", "platform:client"]
+    },
+    "admin-feature-settings": {
+      "tags": ["lib", "scope:admin", "type:feature", "platform:client"]
+    }
+  },
+  "affected": {
+    "defaultBase": "master"
+  }
+}

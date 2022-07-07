@@ -1,0 +1,23 @@
+<ng-container *transloco="let t; read: 'public.login'">
+  <mat-card-title>{{ t('title') }}</mat-card-title>
+
+  <mat-card-content>
+    <form id="form" [formGroup]="form" (submit)="submit(form)">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ t('form.username.label') }}</mat-label>
+        <input type="text" [placeholder]="t('form.username.placeholder')" matInput formControlName="username" />
+        <mat-error *ngIf="form.get('username').invalid">{{ t('form.username.invalid') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ t('form.password.label') }}</mat-label>
+        <input type="password" [placeholder]="t('form.password.placeholder')" matInput formControlName="password" />
+        <mat-error *ngIf="form.get('password').invalid">{{ t('form.password.invalid') }}</mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button form="form" color="primary">{{ t('action.continue') }}</button>
+  </mat-card-actions>
+</ng-container>

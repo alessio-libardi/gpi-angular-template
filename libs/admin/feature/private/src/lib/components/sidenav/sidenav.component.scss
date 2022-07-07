@@ -1,0 +1,31 @@
+.mat-sidenav-container {
+  height: 100%;
+  z-index: unset;
+}
+
+mat-sidenav {
+  z-index: 10;
+}
+
+mat-sidenav-content {
+  margin: 56px 0;
+}
+
+.sidenav-content {
+  .header {
+    padding: 0 1em;
+  }
+}
+.app-link {
+  height: 40px;
+}
+.app-title {
+  margin-left: 1em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 600px) {
+  mat-sidenav-content {
+    margin: 64px 0;
+  }
+}

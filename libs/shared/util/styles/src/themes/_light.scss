@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains application-wide light theme definition.
+// https://material.angular.io/guide/theming
+// -----------------------------------------------------------------------------
+@import '~@angular/material/theming';
+@import 'abstracts/variables';
+
+$primary: mat-palette($light-primary);
+$accent: mat-palette($light-accent);
+$warn: mat-palette($light-warn);
+
+$theme-light: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+.theme-light {
+  @include angular-material-theme($theme-light);
+}

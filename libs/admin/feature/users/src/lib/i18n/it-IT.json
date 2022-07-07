@@ -1,0 +1,79 @@
+{
+  "list": {
+    "header": {
+      "title": "Lista utenti",
+      "button": {
+        "add": "Aggiungi"
+      }
+    },
+    "results": {
+      "table": {
+        "header": {
+          "id": "Identificativo",
+          "name": "Nome",
+          "actions": "Azioni"
+        },
+        "button": {
+          "tooltip": "Altre azioni",
+          "edit": "Modifica",
+          "delete": "Elimina"
+        }
+      }
+    },
+    "noResults": {
+      "noResultsFound": "Nessun risultato trovato"
+    }
+  },
+  "detail": {
+    "header": {
+      "title": "Dettaglio utente",
+      "button": {
+        "back": "Indietro",
+        "save": "Salva"
+      }
+    },
+    "content": {},
+    "noContent": {
+      "noContentFound": "Nessun contenuto trovato"
+    }
+  },
+  "dialog": {
+    "create": {
+      "title": "Crea un utente",
+
+      "action": {
+        "cancel": "Annulla",
+        "confirm": "Conferma"
+      }
+    }
+  },
+  "form": {
+    "user": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Inserisci un nome",
+        "error": "Inserisci un nome valido"
+      },
+      "username": {
+        "label": "Nome utente",
+        "placeholder": "Inserisci un nome utente",
+        "error": "Inserisci un nome utente valido"
+      },
+      "email": {
+        "label": "Indirizzo email",
+        "placeholder": "Inserisci un indirizzo email",
+        "error": "Inserisci un indirizzo email valida"
+      },
+      "phone": {
+        "label": "Numero di telefono",
+        "placeholder": "Inserisci un numero di telefono",
+        "error": "Inserisci un numero di telefono valido"
+      }
+    }
+  },
+  "notification": {
+    "created": "Utente creato con successo",
+    "edited": "Utente aggiornato con successo",
+    "deleted": "Utente eliminato con successo"
+  }
+}

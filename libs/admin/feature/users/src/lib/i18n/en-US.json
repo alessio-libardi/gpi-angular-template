@@ -1,0 +1,79 @@
+{
+  "list": {
+    "header": {
+      "title": "Users list",
+      "button": {
+        "add": "Add"
+      }
+    },
+    "results": {
+      "table": {
+        "header": {
+          "id": "Id",
+          "name": "Name",
+          "actions": "Actions"
+        },
+        "button": {
+          "tooltip": "More actions",
+          "edit": "Edit",
+          "delete": "Delete"
+        }
+      }
+    },
+    "noResults": {
+      "noResultsFound": "No results found"
+    }
+  },
+  "detail": {
+    "header": {
+      "title": "User detail",
+      "button": {
+        "back": "Back",
+        "save": "Save"
+      }
+    },
+    "content": {},
+    "noContent": {
+      "noContentFound": "No content found"
+    }
+  },
+  "dialog": {
+    "create": {
+      "title": "Create user",
+
+      "action": {
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      }
+    }
+  },
+  "form": {
+    "user": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter a name",
+        "error": "Enter a valid name"
+      },
+      "username": {
+        "label": "Username",
+        "placeholder": "Enter a username",
+        "error": "Enter a valid name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter a email",
+        "error": "Enter a valid email address"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "Enter a phone number",
+        "error": "Enter a valid phone number"
+      }
+    }
+  },
+  "notification": {
+    "created": "User successfully created",
+    "edited": "User successfully updated",
+    "deleted": "User successfully deleted"
+  }
+}

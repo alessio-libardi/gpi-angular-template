@@ -1,0 +1,9 @@
+<div
+  class="container-loader"
+  *ngIf="(loaders.get$ | async) || (loaders.add$ | async) || (loaders.update$ | async) || (loaders.delete$ | async)"
+>
+  <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="container my-4">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,33 @@
+<ng-container *transloco="let t; read: 'settings'">
+  <section class="container my-4">
+    <h1>{{ t('title') }}</h1>
+
+    <section fxLayout="row" fxLayoutAlign="space-between center">
+      <h2>{{ t('language') }}</h2>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ t('language') }}</mat-label>
+        <mat-select [value]="activeLanguage$ | async" (selectionChange)="selectedLanguage($event.value)">
+          <mat-option *ngFor="let language of languages$ | async" [value]="language">
+            {{ language.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+
+    <mat-divider></mat-divider>
+
+    <section fxLayout="row" fxLayoutAlign="space-between center">
+      <h2>{{ t('theme') }}</h2>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ t('theme') }}</mat-label>
+        <mat-select [value]="activeTheme$ | async" (selectionChange)="selectedTheme($event.value)">
+          <mat-option *ngFor="let theme of themes$ | async" [value]="theme">
+            {{ theme.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+  </section>
+</ng-container>

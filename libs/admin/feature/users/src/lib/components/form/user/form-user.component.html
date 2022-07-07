@@ -1,0 +1,31 @@
+<ng-container *transloco="let t; read: 'users.form.user'">
+  <form [formGroup]="form" (ngSubmit)="submit(form)">
+    <div class="row">
+      <mat-form-field appearance="outline" class="col-12 col-md-6">
+        <mat-label>{{ t('name.label') }}</mat-label>
+        <input matInput formControlName="name" placeholder="{{ t('name.placeholder') }}" />
+        <mat-error *ngIf="form.get('name')">{{ t('name.error') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-12 col-md-6">
+        <mat-label>{{ t('username.label') }}</mat-label>
+        <input matInput formControlName="username" placeholder="{{ t('username.placeholder') }}" />
+        <mat-error *ngIf="form.get('username')">{{ t('username.error') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-12 col-md-6">
+        <mat-label>{{ t('email.label') }}</mat-label>
+        <input matInput formControlName="email" placeholder="{{ t('email.placeholder') }}" />
+        <mat-error *ngIf="form.get('email')">{{ t('email.error') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-12 col-md-6">
+        <mat-label>{{ t('phone.label') }}</mat-label>
+        <input type="tel" matInput formControlName="phone" placeholder="{{ t('phone.placeholder') }}" />
+        <mat-error *ngIf="form.get('phone')">{{ t('phone.error') }}</mat-error>
+      </mat-form-field>
+
+      <button #button type="submit" class="d-none"></button>
+    </div>
+  </form>
+</ng-container>

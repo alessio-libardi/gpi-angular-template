@@ -1,0 +1,26 @@
+{
+  "targets": {
+    "gpi-template": {
+      "hosting": {
+        "gpi-admin-automation": [
+          "gpi-admin-automation"
+        ],
+        "gpi-admin-care": [
+          "gpi-admin-care"
+        ],
+        "gpi-admin-ict": [
+          "gpi-admin-ict"
+        ],
+        "gpi-admin-pay": [
+          "gpi-admin-pay"
+        ],
+        "gpi-admin-software": [
+          "gpi-admin-software"
+        ],
+        "gpi-admin-template": [
+          "gpi-admin-template"
+        ]
+      }
+    }
+  }
+}

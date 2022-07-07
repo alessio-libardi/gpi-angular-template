@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@gpi/admin/data-access/auth": ["libs/admin/data-access/auth/src/index.ts"],
+      "@gpi/admin/data-access/users": ["libs/admin/data-access/users/src/index.ts"],
+      "@gpi/admin/entity": ["libs/admin/entity/src/index.ts"],
+      "@gpi/admin/feature/public": ["libs/admin/feature/public/src/index.ts"],
+      "@gpi/admin/feature/private": ["libs/admin/feature/private/src/index.ts"],
+      "@gpi/admin/feature/shell": ["libs/admin/feature/shell/src/index.ts"],
+      "@gpi/admin/feature/users": ["libs/admin/feature/users/src/index.ts"],
+      "@gpi/admin/util/auth": ["libs/admin/util/auth/src/index.ts"],
+      "@gpi/admin/util/environment": ["libs/admin/util/environment/src/index.ts"],
+      "@gpi/admin/util/error": ["libs/admin/util/error/src/index.ts"],
+      "@gpi/admin/util/icons": ["libs/admin/util/icons/src/index.ts"],
+      "@gpi/admin/util/languages": ["libs/admin/util/languages/src/index.ts"],
+      "@gpi/admin/util/notifications": ["libs/admin/util/notifications/src/index.ts"],
+      "@gpi/admin/util/shared": ["libs/admin/util/shared/src/index.ts"],
+      "@gpi/admin/util/themes": ["libs/admin/util/themes/src/index.ts"],
+      "@gpi/shared/ui/material": ["libs/shared/ui/material/src/index.ts"],
+      "@gpi/admin/feature/home": ["libs/admin/feature/home/src/index.ts"],
+      "@gpi/admin/feature/profile": ["libs/admin/feature/profile/src/index.ts"],
+      "@gpi/admin/feature/settings": ["libs/admin/feature/settings/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

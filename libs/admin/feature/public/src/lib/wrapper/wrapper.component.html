@@ -1,0 +1,19 @@
+<ng-container *transloco="let t; read: 'public'">
+  <mat-card class="mat-elevation-z5">
+    <mat-card-title fxLayout="row" fxLayoutGap="1rem" fxLayoutAlign="center center">
+      <img
+        fxFlex="none"
+        fxFlexAlign="center"
+        width="75"
+        height="auto"
+        src="{{ applicationLogoSrc }}"
+        [alt]="t('applicationLogo')"
+      />
+
+      <mat-divider fxFlex="none" fxFlexAlign="normal" [vertical]="true"></mat-divider>
+      <h1 fxFlex="grow">{{ title }}</h1>
+    </mat-card-title>
+
+    <router-outlet></router-outlet>
+  </mat-card>
+</ng-container>

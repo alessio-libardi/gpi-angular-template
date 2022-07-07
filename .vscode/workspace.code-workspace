@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "name": "Workspace",
+      "path": ".."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.tslint": true,
+      "source.fixAll.html": true
+    },
+  },
+  "extensions": {
+    "recommendations": [
+      "angular.ng-template",
+      "johnpapa.angular2",
+      "editorconfig.editorconfig",
+      "eamodio.gitlens",
+      "pkief.material-icon-theme",
+      "eg2.vscode-npm-script",
+      "christian-kohler.npm-intellisense",
+      "nrwl.angular-console",
+      "esbenp.prettier-vscode",
+      "ms-vscode.vscode-typescript-tslint-plugin"
+    ]
+  }
+}

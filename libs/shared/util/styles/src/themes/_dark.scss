@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains application-wide dark theme definition.
+// https://material.angular.io/guide/theming
+// -----------------------------------------------------------------------------
+@import '~@angular/material/theming';
+@import 'abstracts/variables';
+
+$primary: mat-palette($dark-primary);
+$accent: mat-palette($dark-accent);
+$warn: mat-palette($dark-warn);
+
+$theme-dark: mat-dark-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+.theme-dark {
+  @include angular-material-theme($theme-dark);
+}

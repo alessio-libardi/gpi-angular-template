@@ -1,0 +1,12 @@
+<ng-container *transloco="let t; read: 'users.list.header'">
+  <div class="row align-items-center justify-content-between">
+    <div class="col">
+      <h1 class="m-0">{{ t('title') }}</h1>
+    </div>
+    <div class="col text-right">
+      <button mat-raised-button color="primary" (click)="create()">
+        {{ t('button.add') }}
+      </button>
+    </div>
+  </div>
+</ng-container>

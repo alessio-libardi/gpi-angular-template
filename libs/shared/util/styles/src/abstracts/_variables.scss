@@ -1,0 +1,117 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+@use "sass:map";
+
+@import '~@angular/material/theming';
+
+// Colors
+$colors: (
+  orange: (
+    50: #ffede7,
+    100: #ffd1c2,
+    200: #ffb399,
+    300: #ff9470,
+    400: #ff7d52,
+    500: #ff6633,
+    600: #ff5e2e,
+    700: #ff5327,
+    800: #ff4920,
+    900: #ff3814,
+    A100: #ffffff,
+    A200: #fffbfb,
+    A400: #ffcec8,
+    A700: #ffb8ae,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #000000,
+      500: #000000,
+      600: #000000,
+      700: #000000,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #000000,
+    ),
+  ),
+  purple: (
+    50: #f2e4f0,
+    100: #dfbbda,
+    200: #ca8dc1,
+    300: #b55fa8,
+    400: #a53d95,
+    500: #951b82,
+    600: #8d187a,
+    700: #82146f,
+    800: #781065,
+    900: #670852,
+    A100: #ff98e6,
+    A200: #ff65d9,
+    A400: #ff32cc,
+    A700: #ff19c6,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #ffffff,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #ffffff,
+    ),
+  ),
+  red: (
+    50: #f6e4e4,
+    100: #e9bbbb,
+    200: #db8e8e,
+    300: #cd6060,
+    400: #c23e3e,
+    500: #b71c1c,
+    600: #b01919,
+    700: #a71414,
+    800: #9f1111,
+    900: #900909,
+    A100: #ffbebe,
+    A200: #ff8b8b,
+    A400: #ff5858,
+    A700: #ff3f3f,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #ffffff,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #ffffff,
+    ),
+  ),
+);
+
+$light-primary: map.get($colors, purple);
+$light-accent: map.get($colors, orange);
+$light-warn: map.get($colors, red);
+
+$dark-primary: map.get($colors, orange);
+$dark-accent: map.get($colors, purple);
+$dark-warn: map.get($colors, red);
+
+// Typography
+$font-family: 'Lato, sans-serif';

@@ -1,0 +1,6 @@
+<ng-container *transloco="let t; read: 'users.detail.content'">
+  <mat-card>
+    <admin-feature-users-form-user [entity]="entity" [submit$]="submit$" (submitted)="save($event)">
+    </admin-feature-users-form-user>
+  </mat-card>
+</ng-container>

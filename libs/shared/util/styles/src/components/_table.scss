@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+
+@import 'themes/dark';
+@import 'themes/light';
+
+$background-dark: map-get($theme-dark, background);
+$background-light: map-get($theme-light, background);
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-header-cell:last-child,
+.mat-cell:last-child {
+  text-align: right;
+}
+
+.theme-light {
+  .mat-row:nth-child(odd) {
+    background-color: mat-color($background-light, background);
+  }
+
+  .mat-row:hover {
+    background-color: mat-color($background-light, hover);
+  }
+}
+
+.theme-dark {
+  .mat-row:nth-child(odd) {
+    background-color: mat-color($background-dark, background);
+  }
+
+  .mat-row:hover {
+    background-color: mat-color($background-dark, hover);
+  }
+}

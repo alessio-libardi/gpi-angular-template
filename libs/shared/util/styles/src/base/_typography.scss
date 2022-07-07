@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains application-wide typography definition.
+// https://material.angular.io/guide/typography
+// -----------------------------------------------------------------------------
+
+@import '~@angular/material/theming';
+@import 'abstracts/variables';
+
+$typography: mat-typography-config(
+  $font-family: $font-family,
+);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($typography);

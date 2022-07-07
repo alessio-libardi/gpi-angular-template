@@ -1,0 +1,1305 @@
+{
+  "version": 1,
+  "projects": {
+    "admin-automation": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/admin/automation",
+      "sourceRoot": "apps/admin/automation/src",
+      "prefix": "admin-automation",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/admin/automation",
+            "index": "apps/admin/automation/src/index.html",
+            "main": "apps/admin/automation/src/main.ts",
+            "polyfills": "apps/admin/automation/src/polyfills.ts",
+            "tsConfig": "apps/admin/automation/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/admin/automation/src/manifest.webmanifest",
+              {
+                "input": "libs/admin/util/assets/src",
+                "glob": "**/*",
+                "output": "/assets/"
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/automation",
+                "glob": "**/*",
+                "output": "/assets/",
+                "ignore": ["**/favicons/*"]
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/automation/favicons",
+                "glob": "**/*",
+                "output": "/"
+              }
+            ],
+            "styles": ["libs/shared/util/styles/src/main.scss"],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/util/styles/src/configuration/automation"]
+            }
+          },
+          "configurations": {
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/automation/src/environments/environment.ts",
+                  "with": "apps/admin/automation/src/environments/environment.develop.ts"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/automation/src/environments/environment.ts",
+                  "with": "apps/admin/automation/src/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/automation/src/environments/environment.ts",
+                  "with": "apps/admin/automation/src/environments/environment.production.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/admin/automation/ngsw-config.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "admin-automation:build"
+          },
+          "configurations": {
+            "develop": {
+              "browserTarget": "admin-automation:build:develop"
+            },
+            "staging": {
+              "browserTarget": "admin-automation:build:staging"
+            },
+            "production": {
+              "browserTarget": "admin-automation:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin-automation:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/admin/automation/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/admin/automation/**/*"]
+          }
+        }
+      }
+    },
+    "admin-care": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/admin/care",
+      "sourceRoot": "apps/admin/care/src",
+      "prefix": "admin-care",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/admin/care",
+            "index": "apps/admin/care/src/index.html",
+            "main": "apps/admin/care/src/main.ts",
+            "polyfills": "apps/admin/care/src/polyfills.ts",
+            "tsConfig": "apps/admin/care/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/admin/care/src/manifest.webmanifest",
+              {
+                "input": "libs/admin/util/assets/src",
+                "glob": "**/*",
+                "output": "/assets/"
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/care",
+                "glob": "**/*",
+                "output": "/assets/",
+                "ignore": ["**/favicons/*"]
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/care/favicons",
+                "glob": "**/*",
+                "output": "/"
+              }
+            ],
+            "styles": ["libs/shared/util/styles/src/main.scss"],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/util/styles/src/configuration/care"]
+            }
+          },
+          "configurations": {
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/care/src/environments/environment.ts",
+                  "with": "apps/admin/care/src/environments/environment.develop.ts"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/care/src/environments/environment.ts",
+                  "with": "apps/admin/care/src/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/care/src/environments/environment.ts",
+                  "with": "apps/admin/care/src/environments/environment.production.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/admin/care/ngsw-config.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "admin-care:build"
+          },
+          "configurations": {
+            "develop": {
+              "browserTarget": "admin-care:build:develop"
+            },
+            "staging": {
+              "browserTarget": "admin-care:build:staging"
+            },
+            "production": {
+              "browserTarget": "admin-care:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin-care:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/admin/care/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/admin/care/**/*"]
+          }
+        }
+      }
+    },
+    "admin-ict": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/admin/ict",
+      "sourceRoot": "apps/admin/ict/src",
+      "prefix": "admin-ict",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/admin/ict",
+            "index": "apps/admin/ict/src/index.html",
+            "main": "apps/admin/ict/src/main.ts",
+            "polyfills": "apps/admin/ict/src/polyfills.ts",
+            "tsConfig": "apps/admin/ict/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/admin/ict/src/manifest.webmanifest",
+              {
+                "input": "libs/admin/util/assets/src",
+                "glob": "**/*",
+                "output": "/assets/"
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/ict",
+                "glob": "**/*",
+                "output": "/assets/",
+                "ignore": ["**/favicons/*"]
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/ict/favicons",
+                "glob": "**/*",
+                "output": "/"
+              }
+            ],
+            "styles": ["libs/shared/util/styles/src/main.scss"],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/util/styles/src/configuration/ict"]
+            }
+          },
+          "configurations": {
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/ict/src/environments/environment.ts",
+                  "with": "apps/admin/ict/src/environments/environment.develop.ts"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/ict/src/environments/environment.ts",
+                  "with": "apps/admin/ict/src/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/ict/src/environments/environment.ts",
+                  "with": "apps/admin/ict/src/environments/environment.production.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/admin/ict/ngsw-config.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "admin-ict:build"
+          },
+          "configurations": {
+            "develop": {
+              "browserTarget": "admin-ict:build:develop"
+            },
+            "staging": {
+              "browserTarget": "admin-ict:build:staging"
+            },
+            "production": {
+              "browserTarget": "admin-ict:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin-ict:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/admin/ict/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/admin/ict/**/*"]
+          }
+        }
+      }
+    },
+    "admin-pay": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/admin/pay",
+      "sourceRoot": "apps/admin/pay/src",
+      "prefix": "admin-pay",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/admin/pay",
+            "index": "apps/admin/pay/src/index.html",
+            "main": "apps/admin/pay/src/main.ts",
+            "polyfills": "apps/admin/pay/src/polyfills.ts",
+            "tsConfig": "apps/admin/pay/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/admin/pay/src/manifest.webmanifest",
+              {
+                "input": "libs/admin/util/assets/src",
+                "glob": "**/*",
+                "output": "/assets/"
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/pay",
+                "glob": "**/*",
+                "output": "/assets/",
+                "ignore": ["**/favicons/*"]
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/pay/favicons",
+                "glob": "**/*",
+                "output": "/"
+              }
+            ],
+            "styles": ["libs/shared/util/styles/src/main.scss"],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/util/styles/src/configuration/pay"]
+            }
+          },
+          "configurations": {
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/pay/src/environments/environment.ts",
+                  "with": "apps/admin/pay/src/environments/environment.develop.ts"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/pay/src/environments/environment.ts",
+                  "with": "apps/admin/pay/src/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/pay/src/environments/environment.ts",
+                  "with": "apps/admin/pay/src/environments/environment.production.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/admin/ict/ngsw-config.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "admin-pay:build"
+          },
+          "configurations": {
+            "develop": {
+              "browserTarget": "admin-pay:build:develop"
+            },
+            "staging": {
+              "browserTarget": "admin-pay:build:staging"
+            },
+            "production": {
+              "browserTarget": "admin-pay:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin-pay:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/admin/pay/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/admin/pay/**/*"]
+          }
+        }
+      }
+    },
+    "admin-software": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/admin/software",
+      "sourceRoot": "apps/admin/software/src",
+      "prefix": "admin-software",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/admin/software",
+            "index": "apps/admin/software/src/index.html",
+            "main": "apps/admin/software/src/main.ts",
+            "polyfills": "apps/admin/software/src/polyfills.ts",
+            "tsConfig": "apps/admin/software/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/admin/software/src/manifest.webmanifest",
+              {
+                "input": "libs/admin/util/assets/src",
+                "glob": "**/*",
+                "output": "/assets/"
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/software",
+                "glob": "**/*",
+                "output": "/assets/",
+                "ignore": ["**/favicons/*"]
+              },
+              {
+                "input": "libs/shared/util/assets/src/configuration/software/favicons",
+                "glob": "**/*",
+                "output": "/"
+              }
+            ],
+            "styles": ["libs/shared/util/styles/src/main.scss"],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["libs/shared/util/styles/src/configuration/software"]
+            }
+          },
+          "configurations": {
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/software/src/environments/environment.ts",
+                  "with": "apps/admin/software/src/environments/environment.develop.ts"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/software/src/environments/environment.ts",
+                  "with": "apps/admin/software/src/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/software/src/environments/environment.ts",
+                  "with": "apps/admin/software/src/environments/environment.production.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/admin/ict/ngsw-config.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "admin-software:build"
+          },
+          "configurations": {
+            "develop": {
+              "browserTarget": "admin-software:build:develop"
+            },
+            "staging": {
+              "browserTarget": "admin-software:build:staging"
+            },
+            "production": {
+              "browserTarget": "admin-software:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin-software:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/admin/software/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/admin/software/**/*"]
+          }
+        }
+      }
+    },
+    "admin-template": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
+        "@nrwl/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "apps/admin/template",
+      "sourceRoot": "apps/admin/template/src",
+      "prefix": "admin-template",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/admin/template",
+            "index": "apps/admin/template/src/index.html",
+            "main": "apps/admin/template/src/main.ts",
+            "polyfills": "apps/admin/template/src/polyfills.ts",
+            "tsConfig": "apps/admin/template/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/admin/template/src/manifest.webmanifest",
+              {
+                "input": "libs/admin/util/assets/src",
+                "glob": "**/*",
+                "output": "/assets/"
+              },
+              {
+                "input": "libs/shared/util/assets/src/",
+                "glob": "**/*",
+                "output": "/assets/",
+                "ignore": ["**/favicons/*", "**/configuration/*"]
+              },
+              {
+                "input": "libs/shared/util/assets/src/favicons",
+                "glob": "**/*",
+                "output": "/"
+              },
+              {
+                "input": "libs/shared/util/assets/src/favicons",
+                "glob": "**/*",
+                "output": "/"
+              }
+            ],
+            "styles": ["libs/shared/util/styles/src/main.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/template/src/environments/environment.ts",
+                  "with": "apps/admin/template/src/environments/environment.develop.ts"
+                }
+              ]
+            },
+            "staging": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/template/src/environments/environment.ts",
+                  "with": "apps/admin/template/src/environments/environment.staging.ts"
+                }
+              ]
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/admin/template/src/environments/environment.ts",
+                  "with": "apps/admin/template/src/environments/environment.production.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/admin/ict/ngsw-config.json"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "admin-template:build"
+          },
+          "configurations": {
+            "develop": {
+              "browserTarget": "admin-template:build:develop"
+            },
+            "staging": {
+              "browserTarget": "admin-template:build:staging"
+            },
+            "production": {
+              "browserTarget": "admin-template:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "admin-template:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/admin/template/tsconfig.app.json"],
+            "exclude": ["**/node_modules/**", "!apps/admin/template/**/*"]
+          }
+        }
+      }
+    },
+    "admin-data-access-auth": {
+      "projectType": "library",
+      "root": "libs/admin/data-access/auth",
+      "sourceRoot": "libs/admin/data-access/auth/src",
+      "prefix": "admin-data-access-auth",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/data-access/auth/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/data-access/auth/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-data-access-users": {
+      "projectType": "library",
+      "root": "libs/admin/data-access/users",
+      "sourceRoot": "libs/admin/data-access/users/src",
+      "prefix": "admin-data-access-users",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/data-access/users/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/data-access/users/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-entity": {
+      "root": "libs/admin/entity",
+      "sourceRoot": "libs/admin/entity/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/entity/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/entity/**/*"]
+          }
+        }
+      }
+    },
+    "admin-feature-public": {
+      "projectType": "library",
+      "root": "libs/admin/feature/public",
+      "sourceRoot": "libs/admin/feature/public/src",
+      "prefix": "admin-feature-public",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/feature/public/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/feature/public/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-feature-private": {
+      "projectType": "library",
+      "root": "libs/admin/feature/private",
+      "sourceRoot": "libs/admin/feature/private/src",
+      "prefix": "admin-feature-private",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/feature/private/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/feature/private/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-feature-shell": {
+      "projectType": "library",
+      "root": "libs/admin/feature/shell",
+      "sourceRoot": "libs/admin/feature/shell/src",
+      "prefix": "admin-feature-shell",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/feature/shell/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/feature/shell/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-feature-users": {
+      "projectType": "library",
+      "root": "libs/admin/feature/users",
+      "sourceRoot": "libs/admin/feature/users/src",
+      "prefix": "admin-feature-users",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/feature/users/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/feature/users/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-auth": {
+      "projectType": "library",
+      "root": "libs/admin/util/auth",
+      "sourceRoot": "libs/admin/util/auth/src",
+      "prefix": "admin-util-auth",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/util/auth/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/util/auth/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-environment": {
+      "projectType": "library",
+      "root": "libs/admin/util/environment",
+      "sourceRoot": "libs/admin/util/environment/src",
+      "prefix": "admin-util-environmennt",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/util/environment/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/util/environment/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-error": {
+      "projectType": "library",
+      "root": "libs/admin/util/error",
+      "sourceRoot": "libs/admin/util/error/src",
+      "prefix": "gpi",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/util/error/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/util/error/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-icons": {
+      "projectType": "library",
+      "root": "libs/admin/util/icons",
+      "sourceRoot": "libs/admin/util/icons/src",
+      "prefix": "admin-util-icons",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/util/icons/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/util/icons/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-languages": {
+      "projectType": "library",
+      "root": "libs/admin/util/languages",
+      "sourceRoot": "libs/admin/util/languages/src",
+      "prefix": "admin-util-languages",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/util/languages/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/util/languages/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-notifications": {
+      "projectType": "library",
+      "root": "libs/admin/util/notifications",
+      "sourceRoot": "libs/admin/util/notifications/src",
+      "prefix": "admin-util-notifications",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/util/notifications/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/util/notifications/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-shared": {
+      "projectType": "library",
+      "root": "libs/admin/util/shared",
+      "sourceRoot": "libs/admin/util/shared/src",
+      "prefix": "admin-util-shared",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/util/shared/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/util/shared/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-themes": {
+      "projectType": "library",
+      "root": "libs/admin/util/themes",
+      "sourceRoot": "libs/admin/util/themes/src",
+      "prefix": "admin-util-themes",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/util/themes/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/util/themes/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-ui-material": {
+      "projectType": "library",
+      "root": "libs/shared/ui/material",
+      "sourceRoot": "libs/shared/ui/material/src",
+      "prefix": "gpi",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/shared/ui/material/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/shared/ui/material/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-util-assets": {
+      "projectType": "library",
+      "root": "libs/admin/util/assets",
+      "sourceRoot": "libs/admin/util/assets/src",
+      "prefix": "admin-util-assets",
+      "architect": {},
+      "schematics": {}
+    },
+    "shared-util-assets": {
+      "root": "libs/shared/util/assets",
+      "sourceRoot": "libs/shared/util/assets/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {}
+    },
+    "shared-util-styles": {
+      "root": "libs/shared/util/styles",
+      "sourceRoot": "libs/shared/util/styles/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {}
+    },
+    "admin-feature-home": {
+      "projectType": "library",
+      "root": "libs/admin/feature/home",
+      "sourceRoot": "libs/admin/feature/home/src",
+      "prefix": "admin-feature-home",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/feature/home/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/feature/home/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-feature-profile": {
+      "projectType": "library",
+      "root": "libs/admin/feature/profile",
+      "sourceRoot": "libs/admin/feature/profile/src",
+      "prefix": "admin-feature-profile",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/feature/profile/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/feature/profile/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "admin-feature-settings": {
+      "projectType": "library",
+      "root": "libs/admin/feature/settings",
+      "sourceRoot": "libs/admin/feature/settings/src",
+      "prefix": "admin-feature-settings",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["libs/admin/feature/settings/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**", "!libs/admin/feature/settings/**/*"]
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    }
+  },
+  "defaultProject": "admin-template",
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "none",
+      "e2eTestRunner": "none"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "none"
+    }
+  }
+}

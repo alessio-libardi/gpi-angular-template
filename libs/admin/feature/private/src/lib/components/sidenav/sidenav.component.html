@@ -1,0 +1,26 @@
+<ng-container *transloco="let t; read: 'private.sidenav'">
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation" mode="over" fixedInViewport="true" [opened]="isNavOpen$ | async"
+      (closed)="closeNav()">
+      <div fxLayout="column" fxFill class="sidenav-content">
+        <!-- Header -->
+        <div fxFlex="56px" fxFlex.gt-xs="64px" fxLayout="row" fxLayoutAlign="center center" class="header">
+          <a class="app-link" mat-button routerLink="/" (click)="sidenav.close()">
+            <img width="auto" height="30px" alt="Logo applicativo" [src]="applicationLogoSrc" />
+            <span class="app-title">{{ title }}</span>
+          </a>
+        </div>
+        <!-- Content -->
+        <div fxFlex="grow">
+          <mat-nav-list>
+            <a mat-list-item routerLink="users" (click)="sidenav.close()">{{ t('usersManagement') }}</a>
+          </mat-nav-list>
+        </div>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content role="main">
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>

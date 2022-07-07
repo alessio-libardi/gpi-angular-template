@@ -1,0 +1,36 @@
+<ng-container *transloco="let t; read: 'private.header'">
+  <mat-toolbar role="heading" class="mat-elevation-z5">
+    <mat-toolbar-row fxLayoutAlign="space-between center" fxLayoutGap="0.5em">
+      <!-- Left -->
+      <div fxFlex="none" fxLayout="row" fxLayoutGap="0.5em">
+        <button mat-icon-button (click)="openNav()">
+          <mat-icon svgIcon="menu"></mat-icon>
+        </button>
+
+        <a mat-button [routerLink]="['/']">
+          <img width="auto" height="30px" [alt]="t('applicationLogo')" [src]="applicationLogoSrc" />
+          <span class="app-title" fxHide fxShow.gt-md>{{ title }}</span>
+        </a>
+      </div>
+
+      <!-- Right -->
+      <div fxFlex="none">
+        <button fxFlex="none" mat-icon-button [matMenuTriggerFor]="userMenu">
+          <mat-icon svgIcon="person"></mat-icon>
+        </button>
+
+        <mat-menu #userMenu="matMenu">
+          <a mat-menu-item [routerLink]="['profile']">
+            {{ t('userMenu.profile') }}
+          </a>
+          <a mat-menu-item [routerLink]="['settings']">
+            {{ t('userMenu.settings') }}
+          </a>
+          <button mat-menu-item (click)="logout()">
+            {{ t('userMenu.logout') }}
+          </button>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</ng-container>

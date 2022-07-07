@@ -1,0 +1,18 @@
+{
+  "header": {
+    "applicationLogo": "Application logo",
+    "userMenu": {
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    }
+  },
+  "sidenav": {
+    "usersManagement": "Users management"
+  },
+  "footer": {
+    "version": "Version {{version}}",
+    "poweredBy": "Powered by",
+    "authorLogo": "Application author logo"
+  }
+}

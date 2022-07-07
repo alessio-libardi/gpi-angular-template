@@ -1,0 +1,22 @@
+{
+  "applicationLogo": "Logo applicativo",
+
+  "login": {
+    "title": "Accedi",
+    "form": {
+      "username": {
+        "label": "Nome utente",
+        "placeholder": "Inserisci il tuo nome utente",
+        "invalid": "Inserisci un nome utente valido"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Inserisci la tua password",
+        "invalid": "Insersci una password valida"
+      }
+    },
+    "action": {
+      "continue": "Continua"
+    }
+  }
+}

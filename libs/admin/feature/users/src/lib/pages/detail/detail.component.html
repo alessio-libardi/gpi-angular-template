@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutGap="1em">
+  <admin-feature-users-detail-header (backed)="back()" (saved)="save()"> </admin-feature-users-detail-header>
+
+  <ng-container
+    *ngIf="entity$ | async as entity"
+    [ngTemplateOutlet]="entity ? content : noContent"
+    [ngTemplateOutletContext]="{ $implicit: entity }"
+  >
+  </ng-container>
+</div>
+
+<ng-template #content let-entity>
+  <admin-feature-users-detail-content [entity]="entity" [submit$]="submit$" (saved)="save($event)">
+  </admin-feature-users-detail-content>
+</ng-template>
+
+<ng-template #noContent>
+  <admin-feature-users-detail-no-content> </admin-feature-users-detail-no-content>
+</ng-template>

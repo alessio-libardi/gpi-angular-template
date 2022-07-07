@@ -1,0 +1,18 @@
+<ng-container *transloco="let t; read: 'private.footer'">
+  <mat-toolbar class="mat-elevation-z5" role="contentinfo">
+    <mat-toolbar-row fxLayoutAlign="space-between center" fxLayoutGap="0.5em">
+      <!-- Left -->
+      <div fxFlex="none">
+        <span class="mat-caption">{{ t('version', { version: version }) }}</span>
+      </div>
+
+      <!-- Right -->
+      <div fxFlex="none">
+        <a mat-button href="https://www.gpi.it/" target="_blank">
+          <span class="mat-caption mr-2">{{ t('poweredBy') }}</span>
+          <img width="auto" height="20px" [alt]="t('authorLogo')" [src]="authorLogoSrc" />
+        </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</ng-container>

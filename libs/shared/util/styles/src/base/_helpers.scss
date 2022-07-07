@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+$floats: left, right;
+@each $value in $floats {
+  .pull-#{$value} {
+    float: $value;
+  }
+}
+
+$textAlignments: left, right, center;
+@each $value in $textAlignments {
+  .text-#{$value} {
+    text-align: #{$value};
+  }
+}
